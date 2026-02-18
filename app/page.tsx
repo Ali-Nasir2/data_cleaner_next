@@ -394,7 +394,7 @@ export default function Page() {
                       <table className="min-w-full text-sm">
                         <thead className="bg-slate-50">
                           <tr>
-                            {previewCols.map((c) => (
+                            {previewCols.map((c: string) => (
                               <th key={c} className="whitespace-nowrap px-3 py-2 text-left text-xs font-semibold text-slate-600">
                                 {c}
                               </th>
@@ -404,7 +404,7 @@ export default function Page() {
                         <tbody>
                           {previewRows.map((r: any, idx: number) => (
                             <tr key={idx} className="border-t border-slate-100">
-                              {previewCols.map((c) => (
+                              {previewCols.map((c: string) => (
                                 <td key={c} className="whitespace-nowrap px-3 py-2 text-slate-700">
                                   {r?.[c] === null || r?.[c] === undefined ? "" : String(r[c]).slice(0, 80)}
                                 </td>
