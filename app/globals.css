@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: 255 255 255;
+  --fg: 15 23 42;
+  --muted: 100 116 139;
+  --card: 255 255 255;
+  --border: 226 232 240;
+  --brand: 59 130 246;
+  --brand2: 168 85 247;
+}
+
+html, body{
+  height: 100%;
+}
+body{
+  color: rgb(var(--fg));
+  background: rgb(var(--bg));
+}
+
+.bg-grid{
+  background-image:
+    linear-gradient(to right, rgba(15,23,42,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15,23,42,0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.noise:before{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+
+.gradient-ring{
+  background: radial-gradient(closest-side, rgba(59,130,246,0.18), rgba(168,85,247,0.08), rgba(255,255,255,0));
+}
+
